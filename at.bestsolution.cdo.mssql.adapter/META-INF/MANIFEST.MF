@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Adapter
+Bundle-SymbolicName: at.bestsolution.cdo.mssql.adapter
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ClassPath: lib/jtds-1.3.0.jar,
+ .
+Import-Package: org.eclipse.net4j.db,
+ org.eclipse.net4j.db.ddl,
+ org.eclipse.net4j.spi.db
