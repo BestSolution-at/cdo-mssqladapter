@@ -1,0 +1,20 @@
+<project default="publish">
+	<property name="cdomssql.version" value="1.0.0-SNAPSHOT" />
+	<property name="cdomssql.update.sitezip" value="" />
+	<property name="cdomssql.update.sitedir" value="" />
+	<property name="cdomssql.update.host.user" value="jenkins-deploy" />
+	<property name="cdomssql.update.host.name" value="www.efxclipse.org" />
+	<property name="cdomssql.update.host.port" value="53023" />
+	<property name="cdomssql.update.scp.name" value="www.efxclipse.org" />
+	<property name="cdomssql.update.host.htdocs" value="/virtual/efxclipse.org/httpd/htdocs" />
+
+	<target name="publish-p2">
+		<echo>Publshing p2-repo</echo>
+		<exec command="rsync -acz -e 'ssh -p ${cdomssql.update.host.port}' ${cdomssql.update.sitezip} ${cdomssql.update.host.user}@${cdomssql.update.scp.name}:${cdomssql.update.host.htdocs}/cdo-mssqladapter/p2-repos/nightly/at.bestsolution.bitbucket.rest.updatesite-${cdomssql.version}.zip" />
+		<exec command="rsync -acz -e 'ssh -p ${cdomssql.update.host.port}' --delete ${cdomssql.update.sitedir} ${cdomssql.update.host.user}@${cdomssql.update.scp.name}:${cdomssql.update.host.htdocs}/cdo-mssqladapter/p2-repos/nightly" />
+	</target>
+	
+	<target name="publish" depends="publish-p2">
+		<echo>Publishing done</echo>
+	</target>
+</project>
