@@ -10,7 +10,7 @@
 
 	<target name="publish-p2">
 		<echo>Publshing p2-repo</echo>
-		<exec command="rsync -acz -e 'ssh -p ${cdomssql.update.host.port}' ${cdomssql.update.sitezip} ${cdomssql.update.host.user}@${cdomssql.update.scp.name}:${cdomssql.update.host.htdocs}/cdo-mssqladapter/p2-repos/nightly/at.bestsolution.bitbucket.rest.updatesite-${cdomssql.version}.zip" />
+		<exec command="rsync -acz -e 'ssh -p ${cdomssql.update.host.port}' ${cdomssql.update.sitezip} ${cdomssql.update.host.user}@${cdomssql.update.scp.name}:${cdomssql.update.host.htdocs}/cdo-mssqladapter/p2-repos/nightly/at.bestsolution.cdo.mssql.adapter.updatesite-${cdomssql.version}.zip" />
 		<exec command="rsync -acz -e 'ssh -p ${cdomssql.update.host.port}' --delete ${cdomssql.update.sitedir} ${cdomssql.update.host.user}@${cdomssql.update.scp.name}:${cdomssql.update.host.htdocs}/cdo-mssqladapter/p2-repos/nightly" />
 	</target>
 	
