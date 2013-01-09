@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/at.bestsolution.cdo.mssql.adapter.feature_1.0.0.qualifier.jar" id="at.bestsolution.cdo.mssql.adapter.feature" version="1.0.0.qualifier">
+      <category name="mssqlcdo"/>
+   </feature>
+   <category-def name="mssqlcdo" label="MS-SQL CDO Adapter"/>
+</site>
